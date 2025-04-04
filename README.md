@@ -1,49 +1,64 @@
-# Projet PHP avec MySQL
+# Art Gallery Management System
 
-Ce projet est une application web simple utilisant PHP et MySQL.
+A web application for managing an art gallery's artworks and warehouses.
 
-## Prérequis
+## Prerequisites
 
-- PHP 7.4 ou supérieur
-- MySQL 5.7 ou supérieur
-- Serveur web (Apache, Nginx, etc.)
+- PHP 7.4 or higher
+- MySQL 5.7 or higher
+- Web server (Apache/Nginx)
+- Composer (for dependency management)
 
 ## Installation
 
-1. Clonez ce dépôt dans votre répertoire web :
+1. Clone the repository:
 ```bash
-git clone [URL_DU_REPO]
+git clone https://github.com/yosraessid/art_gallery.git
+cd art_gallery
 ```
 
-2. Créez une base de données MySQL :
-```sql
-CREATE DATABASE mon_projet;
+2. Create a MySQL database and import the schema:
+```bash
+mysql -u your_username -p your_database_name < database/schema.sql
 ```
 
-3. Créez la table utilisateurs :
-```sql
-USE mon_projet;
-CREATE TABLE utilisateurs (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nom VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    date_creation TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+3. Copy the configuration example file and update it with your database credentials:
+```bash
+cp config.example.php config.php
 ```
 
-4. Configurez les paramètres de connexion dans `config.php` :
-- Modifiez les valeurs de `$host`, `$dbname`, `$username` et `$password` selon votre configuration
+4. Update the database connection settings in `config.php`
 
-5. Assurez-vous que votre serveur web est configuré pour exécuter PHP
+5. Start your web server and navigate to the application URL
 
-## Utilisation
+## Features
 
-1. Accédez à l'application via votre navigateur web
-2. Remplissez le formulaire avec votre nom et email
-3. Les données seront sauvegardées dans la base de données
+- User authentication (login/logout)
+- Artwork management (add, edit, delete)
+- Warehouse management (add, edit, delete)
+- Dashboard with statistics
+- Responsive design
 
-## Structure du projet
+## Project Structure
 
-- `index.php` : Page d'accueil avec le formulaire
-- `config.php` : Configuration de la base de données
-- `traitement.php` : Traitement du formulaire et sauvegarde des données 
+```
+art_gallery/
+├── assets/
+│   ├── css/
+│   └── images/
+├── includes/
+│   └── navbar.php
+├── database/
+│   └── schema.sql
+├── artworks.php
+├── warehouses.php
+├── index.php
+├── login.php
+├── logout.php
+├── config.php
+└── README.md
+```
+
+## License
+
+This project is licensed under the MIT License.
