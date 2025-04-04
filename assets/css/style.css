@@ -1,0 +1,352 @@
+/* Import Lato font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+/* Define CSS variables for consistent colors and values */
+:root {
+    --primary-color: #4E598C;    /* Main brand color */
+    --secondary-color: #F9C784;  /* Secondary accent color */
+    --white-color: #FFFFFF;      /* Pure white */
+    --text-color: #333333;       /* Main text color */
+}
+
+/* Base styles for HTML */
+html {
+    font-size: 16px;  /* Set base font size */
+}
+
+/* Base styles for body */
+body {
+    font-family: 'Lato', sans-serif;  /* Set default font */
+    background-color: #f8f9fa;        /* Light gray background */
+    color: var(--text-color);         /* Set text color */
+    min-height: 100vh;                /* Minimum full viewport height */
+    margin: 0;                        /* Remove default margin */
+}
+
+/* Responsive navigation styles */
+.navbar {
+    background-color: var(--primary-color) !important;  /* Set navbar background */
+    padding: 1rem;                                      /* Add padding */
+}
+
+/* Navbar brand styling */
+.navbar-brand {
+    font-size: 1.5rem;    /* Larger font size */
+    font-weight: 700;     /* Bold text */
+}
+
+/* Navigation link styling */
+.nav-link {
+    font-size: 1rem;              /* Standard font size */
+    padding: 0.5rem 1rem !important;  /* Add padding */
+}
+
+/* Container responsive styles */
+.container {
+    width: 100%;                  /* Full width */
+    padding-right: 15px;          /* Right padding */
+    padding-left: 15px;           /* Left padding */
+    margin-right: auto;           /* Auto right margin */
+    margin-left: auto;            /* Auto left margin */
+}
+
+/* Card styles */
+.card {
+    margin-bottom: 1rem;          /* Bottom margin */
+    border-radius: 8px;           /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);  /* Subtle shadow */
+}
+
+/* Card body padding */
+.card-body {
+    padding: 1.5rem;              /* Inner padding */
+}
+
+/* Responsive table styles */
+.table-responsive {
+    margin-bottom: 1rem;          /* Bottom margin */
+    border-radius: 8px;           /* Rounded corners */
+    background-color: var(--white-color);  /* White background */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);  /* Subtle shadow */
+}
+
+/* Table header styles */
+.table th {
+    background-color: var(--primary-color);  /* Header background */
+    color: var(--white-color);               /* White text */
+    font-weight: 500;                        /* Medium font weight */
+}
+
+/* Form control styles */
+.form-control {
+    padding: 0.75rem;             /* Input padding */
+    border-radius: 6px;           /* Rounded corners */
+}
+
+/* Modal content styles */
+.modal-content {
+    border-radius: 8px;           /* Rounded corners */
+}
+
+/* Button styles */
+.btn {
+    padding: 0.5rem 1rem;         /* Button padding */
+    border-radius: 6px;           /* Rounded corners */
+    font-weight: 500;             /* Medium font weight */
+}
+
+/* Mobile portrait styles (up to 576px) */
+@media (max-width: 576px) {
+    html {
+        font-size: 14px;          /* Smaller base font */
+    }
+
+    .container {
+        padding: 10px;            /* Reduced padding */
+    }
+
+    .card-body {
+        padding: 1rem;            /* Reduced padding */
+    }
+
+    .table-responsive {
+        font-size: 0.9rem;        /* Smaller font */
+    }
+
+    .btn {
+        padding: 0.4rem 0.8rem;   /* Smaller padding */
+    }
+
+    .modal-dialog {
+        margin: 0.5rem;           /* Reduced margin */
+    }
+
+    .display-4 {
+        font-size: 2rem;          /* Smaller display text */
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;        /* Smaller brand text */
+    }
+}
+
+/* Mobile landscape and tablet portrait styles (577px - 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .card-deck {
+        display: flex;            /* Flex display */
+        flex-flow: row wrap;      /* Row wrap */
+        margin-right: -7.5px;     /* Negative margin */
+        margin-left: -7.5px;      /* Negative margin */
+    }
+
+    .card-deck .card {
+        flex: 0 0 calc(50% - 15px);  /* Two cards per row */
+        margin: 7.5px;               /* Card margin */
+    }
+
+    .display-4 {
+        font-size: 2.5rem;         /* Medium display text */
+    }
+}
+
+/* Tablet landscape styles (769px - 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+    .card-deck .card {
+        flex: 0 0 calc(33.333% - 15px);  /* Three cards per row */
+    }
+
+    .container {
+        max-width: 960px;         /* Maximum container width */
+    }
+}
+
+/* Desktop styles (993px - 1200px) */
+@media (min-width: 993px) and (max-width: 1200px) {
+    .container {
+        max-width: 1140px;        /* Maximum container width */
+    }
+}
+
+/* Large desktop styles (> 1200px) */
+@media (min-width: 1201px) {
+    .container {
+        max-width: 1320px;        /* Maximum container width */
+    }
+}
+
+/* Landscape orientation specific styles */
+@media (orientation: landscape) and (max-height: 576px) {
+    .navbar {
+        padding: 0.5rem 1rem;     /* Reduced padding */
+    }
+
+    .modal-dialog {
+        max-height: 90vh;         /* Maximum height */
+    }
+
+    .modal-body {
+        max-height: calc(90vh - 120px);  /* Maximum body height */
+        overflow-y: auto;                 /* Vertical scroll */
+    }
+}
+
+/* Mobile table adjustments */
+@media (max-width: 768px) {
+    .table-responsive table {
+        display: block;           /* Block display */
+        width: 100%;              /* Full width */
+    }
+
+    .table-responsive thead {
+        display: none;            /* Hide headers */
+    }
+
+    .table-responsive tbody tr {
+        display: block;           /* Block display */
+        margin-bottom: 1rem;      /* Bottom margin */
+        border: 1px solid #dee2e6;  /* Border */
+        border-radius: 6px;         /* Rounded corners */
+    }
+
+    .table-responsive td {
+        display: flex;            /* Flex display */
+        justify-content: space-between;  /* Space between */
+        align-items: center;      /* Center align */
+        padding: 0.75rem;         /* Padding */
+        border: none;             /* No border */
+        border-bottom: 1px solid #dee2e6;  /* Bottom border */
+    }
+
+    .table-responsive td:before {
+        content: attr(data-label);  /* Label content */
+        font-weight: 600;           /* Semi-bold */
+        margin-right: 1rem;         /* Right margin */
+    }
+
+    .table-responsive td:last-child {
+        border-bottom: none;       /* No bottom border */
+    }
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none !important;  /* Hide non-printable elements */
+    }
+
+    .table {
+        border-collapse: collapse !important;  /* Collapse borders */
+    }
+
+    .table td,
+    .table th {
+        background-color: var(--white-color) !important;  /* White background */
+    }
+}
+
+/* Navigation styles */
+.navbar-brand, .nav-link {
+    color: var(--white-color) !important;  /* White text */
+    font-weight: 500;                      /* Medium weight */
+}
+
+/* Navigation hover effect */
+.nav-link:hover {
+    color: var(--secondary-color) !important;  /* Accent color on hover */
+}
+
+/* Primary button styles */
+.btn-primary {
+    background-color: var(--primary-color) !important;  /* Primary color */
+    border-color: var(--primary-color) !important;      /* Border color */
+    color: var(--white-color);                          /* White text */
+}
+
+/* Primary button hover effect */
+.btn-primary:hover {
+    background-color: #3a4369 !important;  /* Darker primary color */
+    border-color: #3a4369 !important;      /* Darker border */
+}
+
+/* Secondary button styles */
+.btn-secondary {
+    background-color: var(--secondary-color) !important;  /* Secondary color */
+    border-color: var(--secondary-color) !important;      /* Border color */
+    color: var(--primary-color) !important;               /* Primary text */
+}
+
+/* Secondary button hover effect */
+.btn-secondary:hover {
+    background-color: #f0b76b !important;  /* Darker secondary color */
+    border-color: #f0b76b !important;      /* Darker border */
+}
+
+/* Card header styles */
+.card-header {
+    background-color: var(--primary-color);  /* Primary color */
+    color: var(--white-color);               /* White text */
+}
+
+/* Table header styles */
+.table thead th {
+    background-color: var(--primary-color);  /* Primary color */
+    color: var(--white-color);               /* White text */
+    border-bottom: none;                     /* No bottom border */
+}
+
+/* Striped table row styles */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(78, 89, 140, 0.05);  /* Light primary color */
+}
+
+/* Form label styles */
+.form-label {
+    color: var(--primary-color);  /* Primary color */
+    font-weight: 500;             /* Medium weight */
+}
+
+/* Form control focus styles */
+.form-control:focus {
+    border-color: var(--primary-color);  /* Primary border */
+    box-shadow: 0 0 0 0.2rem rgba(78, 89, 140, 0.25);  /* Subtle shadow */
+}
+
+/* Success alert styles */
+.alert-success {
+    background-color: var(--secondary-color);  /* Secondary color */
+    border-color: #e8b673;                     /* Border color */
+    color: var(--primary-color);               /* Primary text */
+}
+
+/* Modal header styles */
+.modal-header {
+    background-color: var(--primary-color);  /* Primary color */
+    color: var(--white-color);               /* White text */
+}
+
+/* Modal title styles */
+.modal-title {
+    color: var(--white-color);  /* White text */
+}
+
+/* Dashboard card styles */
+.bg-primary {
+    background-color: var(--primary-color) !important;  /* Primary color */
+}
+
+.bg-success {
+    background-color: var(--secondary-color) !important;  /* Secondary color */
+    color: var(--primary-color) !important;               /* Primary text */
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;  /* Reduced padding */
+    }
+    
+    .card {
+        margin-bottom: 15px;  /* Card spacing */
+    }
+} 
+} 
