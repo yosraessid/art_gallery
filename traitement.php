@@ -1,24 +1,31 @@
 <?php
+/**
+ * Data Processing Script
+ * Handles form submission and data insertion into the database
+ */
+
 require_once 'config.php';
 
+// Check if the request method is POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get form data
     $nom = $_POST['nom'];
     $email = $_POST['email'];
 
     try {
-        // Préparation de la requête SQL
+        // Prepare SQL query for data insertion
         $sql = "INSERT INTO utilisateurs (nom, email) VALUES (:nom, :email)";
         $stmt = $pdo->prepare($sql);
         
-        // Exécution de la requête avec les valeurs
+        // Execute the query with the provided values
         $stmt->execute([
             ':nom' => $nom,
             ':email' => $email
         ]);
         
-        echo "Données enregistrées avec succès !";
+        echo "Data saved successfully!";
     } catch(PDOException $e) {
-        echo "Erreur : " . $e->getMessage();
+        echo "Error: " . $e->getMessage();
     }
 }
 ?> 

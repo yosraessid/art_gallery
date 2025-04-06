@@ -1,10 +1,15 @@
 <?php
+/**
+ * Logout Page
+ * Handles user logout and session destruction
+ */
+
 require_once 'config.php';
 
-// Détruire la session
+// Destroy the current session
 session_destroy();
 
-// Rediriger vers la page de connexion
+// Redirect to login page
 header('Location: login.php');
 exit();
 ?> 

@@ -1,4 +1,4 @@
--- Création de la table des administrateurs
+-- Create administrators table
 CREATE TABLE administrators (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
@@ -6,7 +6,7 @@ CREATE TABLE administrators (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Création de la table des entrepôts
+-- Create warehouses table
 CREATE TABLE warehouses (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE warehouses (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Création de la table des œuvres
+-- Create artworks table
 CREATE TABLE artworks (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(200) NOT NULL,

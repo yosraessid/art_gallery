@@ -1,12 +1,17 @@
 <?php
+/**
+ * Database Connection Test Script
+ * Tests the connection to the database and displays the result
+ */
+
 require_once 'config.php';
 
 try {
-    // Test de la connexion
+    // Test the connection by executing a simple query
     $query = "SELECT 1";
     $pdo->query($query);
-    echo "✅ Connexion à la base de données réussie !";
+    echo "✅ Database connection successful!";
 } catch(PDOException $e) {
-    echo "❌ Erreur de connexion : " . $e->getMessage();
+    echo "❌ Connection error: " . $e->getMessage();
 }
 ?> 

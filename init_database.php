@@ -1,23 +1,28 @@
 <?php
-// Utilisation des mêmes paramètres que config.php
+/**
+ * Database Initialization Script
+ * Creates the database and required tables for the application
+ */
+
+// Use the same parameters as config.php
 $host = 'localhost';
 $username = 'root';
 $password = 'root';
 
 try {
-    // Connexion au serveur MySQL sans sélectionner de base de données
+    // Connect to MySQL server without selecting a database
     $pdo = new PDO("mysql:host=$host", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    // Création de la base de données
+    // Create the database
     $sql = "CREATE DATABASE IF NOT EXISTS art_gallery";
     $pdo->exec($sql);
-    echo "✅ Base de données créée avec succès !<br>";
+    echo "✅ Database created successfully!<br>";
 
-    // On se connecte maintenant à la base de données créée
+    // Connect to the created database
     $pdo->exec("USE art_gallery");
 
-    // Création de la table administrators
+    // Create administrators table
     $sql = "CREATE TABLE IF NOT EXISTS administrators (
         id INT AUTO_INCREMENT PRIMARY KEY,
         username VARCHAR(50) NOT NULL UNIQUE,
@@ -25,9 +30,9 @@ try {
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )";
     $pdo->exec($sql);
-    echo "✅ Table administrators créée avec succès !<br>";
+    echo "✅ Administrators table created successfully!<br>";
 
-    // Création de la table warehouses
+    // Create warehouses table
     $sql = "CREATE TABLE IF NOT EXISTS warehouses (
         id INT AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(100) NOT NULL,
@@ -35,9 +40,9 @@ try {
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )";
     $pdo->exec($sql);
-    echo "✅ Table warehouses créée avec succès !<br>";
+    echo "✅ Warehouses table created successfully!<br>";
 
-    // Création de la table artworks
+    // Create artworks table
     $sql = "CREATE TABLE IF NOT EXISTS artworks (
         id INT AUTO_INCREMENT PRIMARY KEY,
         title VARCHAR(200) NOT NULL,
@@ -50,11 +55,11 @@ try {
         FOREIGN KEY (warehouse_id) REFERENCES warehouses(id) ON DELETE SET NULL
     )";
     $pdo->exec($sql);
-    echo "✅ Table artworks créée avec succès !<br>";
+    echo "✅ Artworks table created successfully!<br>";
 
-    echo "<br>✨ Initialisation de la base de données terminée avec succès !<br>";
-    echo "<br>➡️ <a href='create_admin.php'>Cliquez ici pour créer un compte administrateur</a>";
+    echo "<br>✨ Database initialization completed successfully!<br>";
+    echo "<br>➡️ <a href='create_admin.php'>Click here to create an administrator account</a>";
 
 } catch(PDOException $e) {
-    die("❌ Erreur : " . $e->getMessage() . "<br>");
+    die("❌ Error: " . $e->getMessage() . "<br>");
 } 

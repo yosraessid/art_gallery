@@ -1,5 +1,9 @@
 <?php
-// Include configuration file and check user authentication
+/**
+ * Warehouses Management Page
+ * Handles CRUD operations for warehouses
+ */
+
 require_once 'config.php';
 requireLogin();
 
